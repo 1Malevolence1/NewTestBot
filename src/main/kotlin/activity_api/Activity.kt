@@ -20,7 +20,7 @@ data class Activity(
         mKey
     )
 
-    interface Mapper<T> {
+      interface Mapper<T> {
         fun map(
             name: String,
             accessibility: Float,
