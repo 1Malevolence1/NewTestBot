@@ -1,8 +1,5 @@
 import activity_api.ActivityCloud
-import chain.ActivityChain
-import chain.BackChain
-import chain.StartCategoriesChain
-import chain.StartGreeting
+import chain.*
 import core.BotChains
 import handlers.CommandEvent
 import handlers.OnCallbackGotten

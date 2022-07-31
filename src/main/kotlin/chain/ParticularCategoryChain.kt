@@ -1,3 +1,5 @@
+package chain
+
 import activity_api.Activity
 import activity_api.ActivityCloud
 import activity_api.ActivityToMessageText
