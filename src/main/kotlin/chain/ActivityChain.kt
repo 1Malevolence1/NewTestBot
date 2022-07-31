@@ -1,9 +1,10 @@
 package chain
 
 import activity_api.ActivityCloud
-import activity_api.ActivityToMessage
+import activity_api.ActivityToMessageText
 import core.Updating
 import executables.Executable
+import executables.SendMessage
 import handlers.BotRecognizerEvent
 import handlers.UnhandledEvent
 
@@ -16,9 +17,11 @@ class ActivityChain(
     override suspend fun executableChain(updating: Updating): List<Executable> {
         return try {
             updating.map(mEvent)
+            val activity = mActivityProvider.randomActivity()
             listOf(
-                mActivityProvider.randomActivity().map(
-                    ActivityToMessage(mKey)
+                SendMessage(
+                    activity.map(ActivityToMessageText()),
+                    mKey
                 )
             )
         } catch (e: UnhandledEvent) {

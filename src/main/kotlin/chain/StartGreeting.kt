@@ -16,7 +16,7 @@ class StartGreeting(
             updating.map(mEvent)
             listOf(
                 SendMessage(
-                    "Привет\\! Хочешь узнать, что тебя сегодня ждёт? Тогда вводи команду /activity",
+                    "Привет\\! Хочешь узнать, что тебя сегодня ждёт?\nТогда вводи команду /activity",
                     mKey
                 )
             )

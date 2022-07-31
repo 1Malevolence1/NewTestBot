@@ -8,6 +8,8 @@ interface ActivityCloud {
 
     suspend fun randomActivity() : Activity
 
+    suspend fun randomByCategoryActivity(category: String): Activity
+
     class Base(
         private val mClient: OkHttpClient
     ) : ActivityCloud {
@@ -16,6 +18,19 @@ interface ActivityCloud {
             val activityResponse = mClient.newCall(
                 Request.Builder()
                     .url("http://www.boredapi.com/api/activity/")
+                    .build()
+            ).execute()
+            return Activity(
+                JSONObject(
+                    activityResponse.body?.string()
+                )
+            )
+        }
+
+        override suspend fun randomByCategoryActivity(category: String): Activity {
+            val activityResponse = mClient.newCall(
+                Request.Builder()
+                    .url("http://www.boredapi.com/api/activity?type=$category")
                     .build()
             ).execute()
             return Activity(
