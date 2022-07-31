@@ -1,3 +1,4 @@
+import activity_api.ActivityCloud
 import chain.*
 import core.Bot
 import core.BotChains
@@ -14,7 +15,13 @@ class BotChains(
         StartGreeting(
             mKey,
             CommandEvent("/start")
-
+        ),
+        ActivityChain(
+            mKey,
+            CommandEvent("/activity"),
+            ActivityCloud.Base(
+                mClient
+            )
         )
     )
 }
