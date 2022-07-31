@@ -4,6 +4,7 @@ import activity_api.ActivityToMessageText
 import chain.Chain
 import com.sun.net.httpserver.Filter
 import core.Updating
+import executables.AnswerToCallback
 import executables.EditTextMessage
 import executables.Executable
 import handlers.BotRecognizerEvent
@@ -27,6 +28,10 @@ class ParticularCategoryChain(
            updating.map(mEvent)
            val data = updating.map(UpdatingCallbackData())
            listOf(
+               AnswerToCallback(
+                   mKey,
+                   "Перехожу к категории"
+               ),
                EditTextMessage(
                    mKey,
                    mActivityProvider.randomByCategoryActivity(

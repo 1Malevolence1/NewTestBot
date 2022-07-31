@@ -1,5 +1,6 @@
 import activity_api.ActivityCloud
 import chain.ActivityChain
+import chain.BackChain
 import chain.StartCategoriesChain
 import chain.StartGreeting
 import core.BotChains
@@ -22,6 +23,10 @@ class BotChains(
             ActivityCloud.Base(
                 mClient
             )
+        ),
+        BackChain(
+          mKey,
+          OnCallbackGotten("back")
         ),
         StartCategoriesChain(
             mKey,
