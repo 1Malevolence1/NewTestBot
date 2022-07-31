@@ -21,6 +21,13 @@ class BotChains(
                 mClient
             )
         ),
+        NextChain(
+            mKey,
+            OnCallbackGotten(),
+            ActivityCloud.Base(
+                mClient
+            )
+        ),
         BackChain(
           mKey,
           OnCallbackGotten("back")
