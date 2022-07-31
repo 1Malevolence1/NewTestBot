@@ -1,10 +1,8 @@
 import activity_api.ActivityCloud
-import chain.*
-import core.Bot
+import chain.ActivityChain
+import chain.StartGreeting
 import core.BotChains
 import handlers.CommandEvent
-import handlers.OnCallbackGotten
-import handlers.OnTextGotten
 import okhttp3.internal.immutableListOf
 
 class BotChains(

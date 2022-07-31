@@ -30,7 +30,9 @@ class ActivityToMessage(
             )
             appendLine("Participants\\: $participants")
             appendLine("Price\\: ${ToMarkdownSupported.Base(price.toString()).convertedString()}")
-            appendLine("Link\\: $link")
+            if (link.isNotEmpty()) {
+                appendLine("Link\\: $link")
+            }
         },
         mKey
     )

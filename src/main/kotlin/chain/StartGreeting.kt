@@ -1,7 +1,6 @@
 package chain
 
 import core.Updating
-import executables.DeleteMessage
 import executables.Executable
 import executables.SendMessage
 import handlers.BotRecognizerEvent
