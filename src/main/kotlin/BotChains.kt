@@ -4,6 +4,7 @@ import chain.StartCategoriesChain
 import chain.StartGreeting
 import core.BotChains
 import handlers.CommandEvent
+import handlers.OnCallbackGotten
 import okhttp3.internal.immutableListOf
 
 class BotChains(
@@ -25,6 +26,13 @@ class BotChains(
         StartCategoriesChain(
             mKey,
             CommandEvent("/categories")
+        ),
+        ParticularCategoryChain(
+            mKey,
+            OnCallbackGotten(),
+            ActivityCloud.Base(
+                mClient
+            )
         )
     )
 }
