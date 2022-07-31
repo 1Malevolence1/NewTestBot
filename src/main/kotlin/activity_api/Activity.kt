@@ -1,5 +1,7 @@
 package activity_api
 
+import org.json.JSONObject
+
 data class Activity(
     private val mName: String,
     private val mAccessibility: Float,
@@ -9,6 +11,15 @@ data class Activity(
     private val mLink: String,
     private val mKey: String
 ) {
+    constructor(json: JSONObject) : this(
+        json.getString("activity"),
+        json.getFloat("accessibility"),
+        json.getString("type"),
+        json.getInt("participants"),
+        json.getFloat("price"),
+        json.getString("link"),
+        json.getString("key")
+    )
 
     fun <T> map(mapper: Mapper<T>) : T = mapper.map(
         mName,

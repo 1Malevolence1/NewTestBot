@@ -21,9 +21,6 @@ class ActivityJson : Activity.Mapper<JSONObject>{
         json.put("price", price)
         json.put("link", link)
         json.put("key", key)
-
         return json
     }
-
-
 }
