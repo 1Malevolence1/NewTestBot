@@ -1,5 +1,6 @@
 import activity_api.ActivityCloud
 import chain.ActivityChain
+import chain.StartCategoriesChain
 import chain.StartGreeting
 import core.BotChains
 import handlers.CommandEvent
@@ -20,6 +21,10 @@ class BotChains(
             ActivityCloud.Base(
                 mClient
             )
+        ),
+        StartCategoriesChain(
+            mKey,
+            CommandEvent("/categories")
         )
     )
 }
