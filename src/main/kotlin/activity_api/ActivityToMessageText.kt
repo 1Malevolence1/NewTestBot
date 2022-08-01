@@ -16,13 +16,7 @@ class ActivityToMessageText : Activity.Mapper<String> {
         appendLine("*Activity*")
         appendLine("${ToMarkdownSupported.Base(name).convertedString()}\n")
         appendLine("Type\\: $type")
-        appendLine(
-            "Accessibility\\: ${
-                ToMarkdownSupported.Base(
-                    accessibility.toString()
-                ).convertedString()
-            }"
-        )
+
         appendLine("Participants\\: $participants")
         appendLine("Price\\: ${ToMarkdownSupported.Base(price.toString()).convertedString()}")
         if (link.isNotEmpty()) {
