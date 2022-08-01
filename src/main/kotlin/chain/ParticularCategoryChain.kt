@@ -29,6 +29,7 @@ class ParticularCategoryChain(
        return try {
            updating.map(mEvent)
            val data = updating.map(UpdatingCallbackData())
+
            listOf(
                AnswerToCallback(
                    mKey,
