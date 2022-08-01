@@ -21,6 +21,13 @@ class BotChains(
                 mClient
             )
         ),
+        HelpChain(
+            mKey,
+            CommandEvent("/help")
+
+        )
+
+,
         NextChain(
             mKey,
             OnCallbackGotten(),
@@ -28,6 +35,8 @@ class BotChains(
                 mClient
             )
         ),
+
+
         BackChain(
           mKey,
           OnCallbackGotten("back")
